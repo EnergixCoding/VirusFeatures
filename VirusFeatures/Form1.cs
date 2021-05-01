@@ -16,5 +16,23 @@ namespace VirusFeatures
         {
             InitializeComponent();
         }
+
+        private void MalwareFeatures_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(uncloseableForm.Value)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void MalwareFeatures_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void hideInTaskBar_OnValueChange(object sender, EventArgs e)
+        {
+            this.ShowInTaskbar = !hideInTaskBar.Value;
+        }
     }
 }
